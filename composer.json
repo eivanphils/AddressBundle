@@ -1,0 +1,41 @@
+{
+    "name": "hadonra/address-bundle",
+    "type": "symfony-bundle",
+    "description": "Address bundle",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Raldo Chea",
+            "email": "me@rchea.com",
+            "homepage": "http://rchea.com"
+        }
+    ],
+    "support": {
+        "email": "me@rchea.com"
+    },
+    "autoload": {
+        "psr-0": { "Hadonra\\Bundle\\AddressBundle": "" }
+    },
+    "target-dir": "Hadonra/Bundle/AddressBundle",
+    "require": {
+        "php": ">=5.4.0",
+        "symfony/symfony": "~2.4",
+        "doctrine/orm": "~2.2,>=2.2.3",
+        "doctrine/doctrine-bundle": "~1.2",
+        "sensio/framework-extra-bundle": "~3.0",
+        "knplabs/doctrine-behaviors": "1.0.*@dev"
+    },
+    "require-dev": {
+        "behat/symfony2-extension": "*",
+        "atoum/atoum": "dev-master",
+        "atoum/atoum-bundle": "dev-master"
+    },
+    "config": {
+        "bin-dir": "bin"
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "2.4-dev"
+        }
+    }
+}
