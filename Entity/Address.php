@@ -2,25 +2,53 @@
 
 namespace Hadonra\Bundle\AddressBundle\Entity;
 
+use Knp\DoctrineBehaviors\Model as ORMBehaviors;
+use Doctrine\ORM\Mapping as ORM;
 use Hadonra\Bundle\AddressBundle\Model\AddressInterface;
-use Knp\DoctrineBehaviors\Model\Geocodable as KnpGeocodable;
+use Hadonra\Bundle\AddressBundle\Model\CityInterface;
 
+/**
+ * @package HadonraAddressBundle
+ * @author Raldo CHEA <me@rchea.com>
+ *
+ * @ORM\Entity
+ * @ORM\Table()
+ * @ORM\Entity(repositoryClass="Hadonra\Bundle\AddressBundle\Repository\AddressRepository")
+ */
 class Address implements AddressInterface
 {
-    use KnpGeocodable\Geocodable;
+    use ORMBehaviors\Geocodable\Geocodable;
 
+    /**
+     * @ORM\Id
+     * @ORM\Column(type="integer")
+     * @ORM\GeneratedValue(strategy="AUTO")
+     */
     protected $id;
 
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
     protected $street;
 
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
     protected $street2;
 
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
     protected $street3;
 
+    /**
+     * @ORM\ManyToOne(targetEntity="City", inversedBy="addresses")
+     * @ORM\JoinColumn(name="city_id", referencedColumnName="id")
+     */
     protected $city;
 
     /**
-     * @return mixed
+     * {@inheritDoc}
      */
     public function getId()
     {
@@ -28,15 +56,17 @@ class Address implements AddressInterface
     }
 
     /**
-     * @param mixed $city
+     * {@inheritDoc}
      */
-    public function setCity($city)
+    public function setCity(CityInterface $city)
     {
         $this->city = $city;
+
+        return $this;
     }
 
     /**
-     * @return mixed
+     * {@inheritDoc}
      */
     public function getCity()
     {
@@ -44,15 +74,17 @@ class Address implements AddressInterface
     }
 
     /**
-     * @param mixed $street
+     * {@inheritDoc}
      */
     public function setStreet($street)
     {
         $this->street = $street;
+
+        return $this;
     }
 
     /**
-     * @return mixed
+     * {@inheritDoc}
      */
     public function getStreet()
     {
@@ -60,15 +92,17 @@ class Address implements AddressInterface
     }
 
     /**
-     * @param mixed $street2
+     * {@inheritDoc}
      */
     public function setStreet2($street2)
     {
         $this->street2 = $street2;
+
+        return $this;
     }
 
     /**
-     * @return mixed
+     * {@inheritDoc}
      */
     public function getStreet2()
     {
@@ -76,18 +110,22 @@ class Address implements AddressInterface
     }
 
     /**
-     * @param mixed $street3
+     * {@inheritDoc}
      */
     public function setStreet3($street3)
     {
         $this->street3 = $street3;
+
+        return $this;
     }
 
     /**
-     * @return mixed
+     * {@inheritDoc}
      */
     public function getStreet3()
     {
         return $this->street3;
+
+        return $this;
     }
 }
