@@ -2,13 +2,14 @@
 
 namespace Hadonra\Bundle\AddressBundle\Entity;
 
+use Doctrine\ORM\Mapping as ORM;
 use Hadonra\Bundle\AddressBundle\Model\CityInterface;
 
 /**
  * @package HadonraAddressBundle
- * @author Raldo CHEA <me@rchea.com>
+ * @author Raldo CHEA <raldo@chea.io>
  *
- * @ORM\Entity
+ * @ORM\Entity(repositoryClass="Hadonra\Bundle\AddressBundle\Repository\CityRepository")
  * @ORM\Table()
  */
 class City implements CityInterface
@@ -29,6 +30,18 @@ class City implements CityInterface
      * @ORM\Column(type="string", length=15)
      */
     protected $zipCode;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="Department", inversedBy="cities")
+     * @ORM\JoinColumn(name="department_id", referencedColumnName="id")
+     */
+    protected $department;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="Country", inversedBy="cities")
+     * @ORM\JoinColumn(name="country_id", referencedColumnName="id")
+     */
+    protected $country;
 
     /**
      * {@inheritDoc}

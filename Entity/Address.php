@@ -17,7 +17,7 @@ use Hadonra\Bundle\AddressBundle\Model\CityInterface;
  */
 class Address implements AddressInterface
 {
-    use ORMBehaviors\Geocodable\Geocodable;
+//    use ORMBehaviors\Geocodable\Geocodable;
 
     /**
      * @ORM\Id
@@ -32,12 +32,12 @@ class Address implements AddressInterface
     protected $street;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="string", length=255, nullable=true)
      */
     protected $street2;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="string", length=255, nullable=true)
      */
     protected $street3;
 
