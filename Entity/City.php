@@ -3,6 +3,7 @@
 namespace Hadonra\Bundle\AddressBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Knp\DoctrineBehaviors\Model as ORMBehaviors;
 use Hadonra\Bundle\AddressBundle\Model\CityInterface;
 
 /**
@@ -14,6 +15,8 @@ use Hadonra\Bundle\AddressBundle\Model\CityInterface;
  */
 class City implements CityInterface
 {
+    use ORMBehaviors\Geocodable\Geocodable;
+
     /**
      * @ORM\Id
      * @ORM\Column(type="integer")
