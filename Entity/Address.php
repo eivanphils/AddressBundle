@@ -11,13 +11,12 @@ use Hadonra\Bundle\AddressBundle\Model\CityInterface;
  * @package HadonraAddressBundle
  * @author Raldo CHEA <me@rchea.com>
  *
- * @ORM\Entity
  * @ORM\Table()
  * @ORM\Entity(repositoryClass="Hadonra\Bundle\AddressBundle\Repository\AddressRepository")
  */
 class Address implements AddressInterface
 {
-//    use ORMBehaviors\Geocodable\Geocodable;
+    use ORMBehaviors\Geocodable\Geocodable;
 
     /**
      * @ORM\Id
