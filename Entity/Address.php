@@ -9,7 +9,7 @@ use Hadonra\Bundle\AddressBundle\Model\CityInterface;
 
 /**
  * @package HadonraAddressBundle
- * @author Raldo CHEA <me@rchea.com>
+ * @author Raldo CHEA <raldo@chea.io>
  *
  * @ORM\Table()
  * @ORM\Entity(repositoryClass="Hadonra\Bundle\AddressBundle\Repository\AddressRepository")

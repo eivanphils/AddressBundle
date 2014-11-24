@@ -4,7 +4,7 @@ namespace Hadonra\Bundle\AddressBundle\Model;
 
 /**
  * @package HadonraAddressBundle
- * @author Raldo CHEA <me@rchea.com>
+ * @author Raldo CHEA <raldo@chea.io>
  */
 interface CityInterface
 {

@@ -6,12 +6,12 @@
     "authors": [
         {
             "name": "Raldo Chea",
-            "email": "me@rchea.com",
+            "email": "raldo@chea.io",
             "homepage": "http://rchea.com"
         }
     ],
     "support": {
-        "email": "me@rchea.com"
+        "email": "raldo@chea.io"
     },
     "autoload": {
         "psr-0": { "Hadonra\\Bundle\\AddressBundle": "" }
