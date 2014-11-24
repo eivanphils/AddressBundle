@@ -19,11 +19,12 @@
     "target-dir": "Hadonra/Bundle/AddressBundle",
     "require": {
         "php": ">=5.4.0",
-        "symfony/symfony": "~2.4",
+        "symfony/symfony": "2.5.*",
         "doctrine/orm": "~2.2,>=2.2.3",
         "doctrine/doctrine-bundle": "~1.2",
         "sensio/framework-extra-bundle": "~3.0",
-        "knplabs/doctrine-behaviors": "1.0.*@dev"
+        "knplabs/doctrine-behaviors": "1.0.*@dev",
+        "doctrine/doctrine-fixtures-bundle": "dev-master"
     },
     "require-dev": {
         "behat/symfony2-extension": "*",
@@ -35,7 +36,7 @@
     },
     "extra": {
         "branch-alias": {
-            "dev-master": "2.4-dev"
+            "dev-master": "2.5-dev"
         }
     }
 }
