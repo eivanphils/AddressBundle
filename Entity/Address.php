@@ -127,4 +127,12 @@ class Address implements AddressInterface
 
         return $this;
     }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getFullAddress()
+    {
+        return $this->street. ', '. $this->getCity()->getName();
+    }
 }
