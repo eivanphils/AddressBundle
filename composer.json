@@ -24,12 +24,12 @@
         "doctrine/doctrine-bundle": "~1.2",
         "sensio/framework-extra-bundle": "~3.0",
         "knplabs/doctrine-behaviors": "1.0.*@dev",
-        "doctrine/doctrine-fixtures-bundle": "dev-master"
+        "doctrine/doctrine-fixtures-bundle": "2.2.*@dev",
+        "willdurand/geocoder-bundle": "@stable"
     },
     "require-dev": {
         "behat/symfony2-extension": "*",
-        "atoum/atoum": "dev-master",
-        "atoum/atoum-bundle": "dev-master"
+        "phpunit/phpunit": "4.4.0"
     },
     "config": {
         "bin-dir": "bin"
