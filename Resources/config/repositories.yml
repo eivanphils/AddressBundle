@@ -1,0 +1,7 @@
+parameters:
+    hadonra_address.address.repository.class: Hadonra\Bundle\AddressBundle\Repository\AddressRepository
+
+services:
+    hadonra_address.address.repository:
+        class: %hadonra_address.address.repository.class%
+

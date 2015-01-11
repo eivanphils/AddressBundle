@@ -54,4 +54,9 @@ interface AddressInterface
      * @return string
      */
     public function getStreet3();
+
+    /**
+     * @return string
+     */
+    public function getFullAddress();
 }
