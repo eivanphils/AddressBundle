@@ -1,3 +1,0 @@
-hadonra_address_homepage:
-    pattern:  /hello/{name}
-    defaults: { _controller: HadonraAddressBundle:Default:index }
