@@ -3,8 +3,8 @@
 namespace Hadonra\Bundle\AddressBundle\Tests\Units\Service;
 
 use Hadonra\Bundle\AddressBundle\Entity\City;
-use Hadonra\Bundle\AddressBundle\Repository\AddressRepository;
 use Hadonra\Bundle\AddressBundle\Service\AddressService;
+use Hadonra\Bundle\AddressBundle\Model\AddressInterface;
 
 class AddressServiceTest extends \PHPUnit_Framework_TestCase
 {
@@ -22,7 +22,8 @@ class AddressServiceTest extends \PHPUnit_Framework_TestCase
     public function testCreate()
     {
         $city = new City();
+        $address = $this->addressService->create($city, '2 rue francisco ferrer');
 
-        $this->addressService->create($city, '2 rue francisco ferrer');
+        $this->assertTrue($address instanceof AddressInterface);
     }
 }

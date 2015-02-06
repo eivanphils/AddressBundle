@@ -12,8 +12,8 @@ interface AddressServiceInterface
     public function create(CityInterface $city, $street);
 
     /**
-     * @param string $fullAddress
+     * @param AddressInterface $address
      * @return array
      */
-    public function definedPoint($fullAddress);
+    public function definedPoint(AddressInterface $address);
 }

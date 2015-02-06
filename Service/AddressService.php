@@ -3,6 +3,8 @@
 namespace Hadonra\Bundle\AddressBundle\Service;
 
 use Hadonra\Bundle\AddressBundle\Entity\Address;
+use Hadonra\Bundle\AddressBundle\Model\AddressInterface;
+use Hadonra\Bundle\AddressBundle\Repository\AddressRepository;
 use Hadonra\Bundle\AddressBundle\Model\CityInterface;
 use Hadonra\Bundle\AddressBundle\Model\AddressServiceInterface;
 
@@ -24,17 +26,13 @@ class AddressService implements AddressServiceInterface
     /**
      * {@inheritDoc}
      */
-    public function create(CityInterface $city, $street, $definePoint = true)
+    public function create(CityInterface $city, $street)
     {
         $address = new Address();
         $address
             ->setCity($city)
             ->setStreet($street)
         ;
-
-        if ($definePoint) {
-            $address = $this->definedPoint($address->getFullAddress());
-        }
 
         $this->addressRepository->attach($address);
 
