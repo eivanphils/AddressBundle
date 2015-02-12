@@ -4,4 +4,5 @@ parameters:
 services:
     hadonra_address.address.repository:
         class: %hadonra_address.address.repository.class%
-
+        arguments:
+            - "@doctrine.orm.entity_manager"
