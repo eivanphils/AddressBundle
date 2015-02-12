@@ -51,8 +51,14 @@ class AddressService implements AddressServiceInterface
     /**
      * {@inheritDoc}
      */
-    public function definedPoint($fullAddress)
+    public function definedPoint(AddressInterface $address)
     {
+        $result = $this->geocoderProvider->geocode($address->getFullAddress());
 
+        $point = Point::fromArray($result->getCoordinates());
+        $address = new Address();
+        $address->setLocation($point);
+
+        return $address;
     }
 }
