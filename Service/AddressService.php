@@ -2,6 +2,7 @@
 
 namespace Hadonra\Bundle\AddressBundle\Service;
 
+use Bazinga\Bundle\GeocoderBundle\Geocoder\LoggableGeocoder;
 use Hadonra\Bundle\AddressBundle\Entity\Address;
 use Hadonra\Bundle\AddressBundle\Model\AddressInterface;
 use Hadonra\Bundle\AddressBundle\Repository\AddressRepository;
@@ -16,11 +17,19 @@ class AddressService implements AddressServiceInterface
     protected $addressRepository;
 
     /**
-     * @param AddressRepository $addressRepository
+     * @var LoggableGeocoder
      */
-    public function __construct(AddressRepository $addressRepository)
+    protected $geocoderProvider;
+
+    /**
+     * @param AddressRepository $addressRepository
+     * @param LoggableGeocoder $bazingaGeocoderService
+     * @param string $providerName
+     */
+    public function __construct(AddressRepository $addressRepository, LoggableGeocoder $bazingaGeocoderService, $providerName)
     {
         $this->addressRepository = $addressRepository;
+        $this->geocoderProvider = $bazingaGeocoderService->using($providerName);
     }
 
     /**

@@ -1,9 +1,12 @@
 parameters:
     hadonra_address.address.service.class: Hadonra\Bundle\AddressBundle\Service\AddressService
+    hadonra_address.bazinga_geocoder.provider:
 
 services:
     hadonra_address.address.service:
         class: %hadonra_address.address.service.class%
         arguments:
             - "@hadonra_address.address.repository"
+            - "@bazinga_geocoder.geocoder"
+            - "%hadonra_address.bazinga_geocoder.provider%"
 

@@ -23,7 +23,10 @@ class HadonraAddressExtension extends Extension
         $config = $this->processConfiguration($configuration, $configs);
 
         $loader = new Loader\YamlFileLoader($container, new FileLocator(__DIR__.'/../Resources/config'));
+
         $loader->load('services.yml');
         $loader->load('repositories.yml');
+
+        $container->setParameter('hadonra_address.bazinga_geocoder.provider', $config['provider']);
     }
 }
