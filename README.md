@@ -17,10 +17,12 @@ Add to composer and update.
 2) Define your bazinga geocoder provider
 ----------------------------------------
 
+Must configure bazinga geocoder both.
+
 ```
 # app/config/config.yml
 hadonra_address:
-    provider:   google_maps`
+    provider:   google_maps
 ```
 
 3) Dump Countries, Region, Department and city
