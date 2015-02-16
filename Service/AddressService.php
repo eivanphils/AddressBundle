@@ -8,6 +8,7 @@ use Hadonra\Bundle\AddressBundle\Model\AddressInterface;
 use Hadonra\Bundle\AddressBundle\Repository\AddressRepository;
 use Hadonra\Bundle\AddressBundle\Model\CityInterface;
 use Hadonra\Bundle\AddressBundle\Model\AddressServiceInterface;
+use Knp\DoctrineBehaviors\ORM\Geocodable\Type\Point;
 
 class AddressService implements AddressServiceInterface
 {
@@ -53,10 +54,9 @@ class AddressService implements AddressServiceInterface
      */
     public function definedPoint(AddressInterface $address)
     {
-        $result = $this->geocoderProvider->geocode($address->getFullAddress());
-
+        $fullAddress = str_replace('bis', '', $address->getFullAddress());
+        $result = $this->geocoderProvider->geocode($fullAddress);
         $point = Point::fromArray($result->getCoordinates());
-        $address = new Address();
         $address->setLocation($point);
 
         return $address;
