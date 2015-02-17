@@ -45,7 +45,6 @@ behat.yml
 *.rpm
 
 # OSX
-.DS_Store
 .AppleDouble
 .LSOverride
 Icon
