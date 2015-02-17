@@ -1,3 +1,5 @@
+[![SensioLabsInsight](https://insight.sensiolabs.com/projects/18a3a11d-2510-44ff-8c9e-b5d2902adde7/mini.png)](https://insight.sensiolabs.com/projects/18a3a11d-2510-44ff-8c9e-b5d2902adde7)
+
 HADONRA - address-bundle
 ========================
 
