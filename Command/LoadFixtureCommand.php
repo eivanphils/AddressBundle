@@ -19,15 +19,15 @@ class LoadFixtureCommand extends ContainerAwareCommand
     protected function execute(InputInterface $input, OutputInterface $output)
     {
         $scripts = ['countries.sql', 'regions.sql', 'departments.sql', 'cities.sql'];
-        $path = __DIR__.'/../DataFixtures/sql/';
-
+        $kernel = $this->getApplication()->getKernel();
         foreach ($scripts as $script) {
+            $pathFile = $kernel->locateResource('@HadonraAddressBundle/DataFixtures/sql/' . $script);
             exec(sprintf(
                 'mysql -u %s -p%s %s < %s',
                 $this->getContainer()->getParameter('database_user'),
                 $this->getContainer()->getParameter('database_password'),
                 $this->getContainer()->getParameter('database_name'),
-                $path.$script
+                $pathFile
             ));
         }
     }
