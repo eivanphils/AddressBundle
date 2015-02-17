@@ -4,7 +4,7 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "d0c660505dee2e1487f93bdea0766230",
+    "hash": "eb163ae679c933e75b029fda2c5cfb1f",
     "packages": [
         {
             "name": "doctrine/annotations",
@@ -884,7 +884,7 @@
         },
         {
             "name": "knplabs/doctrine-behaviors",
-            "version": "dev-master",
+            "version": "v1.0.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/KnpLabs/DoctrineBehaviors.git",
@@ -2365,7 +2365,6 @@
     "aliases": [],
     "minimum-stability": "stable",
     "stability-flags": {
-        "knplabs/doctrine-behaviors": 20,
         "doctrine/doctrine-fixtures-bundle": 20,
         "willdurand/geocoder-bundle": 0
     },
