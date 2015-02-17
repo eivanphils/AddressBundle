@@ -124,8 +124,6 @@ class Address implements AddressInterface
     public function getStreet3()
     {
         return $this->street3;
-
-        return $this;
     }
 
     /**
