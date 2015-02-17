@@ -2,7 +2,6 @@
 
 namespace Hadonra\Bundle\AddressBundle\Repository;
 
-use Doctrine\ORM\EntityManager;
 use Doctrine\ORM\EntityRepository;
 
 /**
