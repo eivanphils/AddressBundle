@@ -1,8 +1,18 @@
 parameters:
     hadonra_address.address.repository.class: Hadonra\Bundle\AddressBundle\Repository\AddressRepository
+    hadonra_address.city.repository.class: Hadonra\Bundle\AddressBundle\Repository\CityRepository
 
 services:
     hadonra_address.address.repository:
         class: %hadonra_address.address.repository.class%
+        factory_service: doctrine.orm.entity_manager
+        factory_method: getRepository
         arguments:
-            - "@doctrine.orm.entity_manager"
+            - HadonraAddressBundle:Address
+
+    hadonra_address.city.repository:
+        class: %hadonra_address.city.repository.class%
+        factory_service: doctrine.orm.entity_manager
+        factory_method: getRepository
+        arguments:
+            - HadonraAddressBundle:City
