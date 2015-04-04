@@ -2,7 +2,7 @@
 
 namespace Hadonra\Bundle\AddressBundle\Service;
 
-use Hadonra\Bundle\AddressBundle\Model\GeolocationServiceInterface;
+use Hadonra\Bundle\AddressBundle\Model\GeolocalisationServiceInterface;
 use Knp\DoctrineBehaviors\ORM\Geocodable\Type\Point;
 
 /**
@@ -12,7 +12,7 @@ use Knp\DoctrineBehaviors\ORM\Geocodable\Type\Point;
  * @link http://www.developpez.net/forums/d1008039/applications/sig-systeme-d-information-geographique/ign-api-geoportail/d-degre-latitude/
  * @link http://blogs.msdn.com/b/ogdifrance/archive/2011/07/13/de-la-g-233-o-et-des-maths.aspx
  */
-class GeolocationService implements GeolocationServiceInterface
+class GeolocalisationService implements GeolocalisationServiceInterface
 {
     const RATIO_DEGREE = 111.13384;
 

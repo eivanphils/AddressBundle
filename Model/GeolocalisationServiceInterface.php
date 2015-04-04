@@ -4,7 +4,7 @@ namespace Hadonra\Bundle\AddressBundle\Model;
 
 use Knp\DoctrineBehaviors\ORM\Geocodable\Type\Point;
 
-interface GeolocationServiceInterface
+interface GeolocalisationServiceInterface
 {
     /**
      * Distance as the crow flies
