@@ -1,4 +1,4 @@
-[![SensioLabsInsight](https://insight.sensiolabs.com/projects/18a3a11d-2510-44ff-8c9e-b5d2902adde7/mini.png)](https://insight.sensiolabs.com/projects/18a3a11d-2510-44ff-8c9e-b5d2902adde7)
+[![SensioLabsInsight](https://insight.sensiolabs.com/projects/18a3a11d-2510-44ff-8c9e-b5d2902adde7/mini.png)](https://insight.sensiolabs.com/projects/18a3a11d-2510-44ff-8c9e-b5d2902adde7) [![Build Status](https://travis-ci.org/hadonra/AddressBundle.svg?branch=master)](https://travis-ci.org/hadonra/AddressBundle) [![Latest Stable Version](https://poser.pugx.org/hadonra/address-bundle/v/stable.svg)](https://packagist.org/packages/hadonra/address-bundle) [![Total Downloads](https://poser.pugx.org/hadonra/address-bundle/downloads.svg)](https://packagist.org/packages/hadonra/address-bundle) [![License](https://poser.pugx.org/hadonra/address-bundle/license.svg)](https://packagist.org/packages/hadonra/address-bundle)
 
 HADONRA - address-bundle
 ========================
