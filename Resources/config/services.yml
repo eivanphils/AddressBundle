@@ -1,15 +1,17 @@
 parameters:
-    hadonra_address.address.service.class: Hadonra\Bundle\AddressBundle\Service\AddressService
-    hadonra_address.bazinga_geocoder.provider:
     hadonra_address.geolocalisation.service.class: Hadonra\Bundle\AddressBundle\Service\GeolocalisationService
+    hadonra_address.bazinga_geocoder.provider:
+    hadonra_address.address.service.class: Hadonra\Bundle\AddressBundle\Service\AddressService
 
 services:
+    hadonra_address.geolocalisation.service:
+        class: %hadonra_address.geolocalisation.service.class%
+        arguments:
+            - "@bazinga_geocoder.geocoder"
+            - "%hadonra_address.bazinga_geocoder.provider%"
+
     hadonra_address.address.service:
         class: %hadonra_address.address.service.class%
         arguments:
             - "@hadonra_address.address.repository"
-            - "@bazinga_geocoder.geocoder"
-            - "%hadonra_address.bazinga_geocoder.provider%"
-
-    hadonra_address.geolocalisation.service:
-        class: %hadonra_address.geolocalisation.service.class%
+            - "@hadonra_address.geolocalisation.service"

@@ -7,6 +7,7 @@ use Geocoder\Provider\GoogleMapsProvider;
 use Hadonra\Bundle\AddressBundle\Entity\City;
 use Hadonra\Bundle\AddressBundle\Service\AddressService;
 use Hadonra\Bundle\AddressBundle\Model\AddressInterface;
+use Hadonra\Bundle\AddressBundle\Service\GeolocalisationService;
 
 class AddressServiceTest extends \PHPUnit_Framework_TestCase
 {
@@ -18,7 +19,8 @@ class AddressServiceTest extends \PHPUnit_Framework_TestCase
             ->disableOriginalConstructor()
             ->getMock();
         $bazingaGeocoder = new LoggableGeocoder();
-        $this->addressService = new AddressService($addressRepository, $bazingaGeocoder ,'google_maps');
+        $geolocalisationService = new GeolocalisationService($bazingaGeocoder, 'google_maps');
+        $this->addressService = new AddressService($addressRepository, $geolocalisationService);
     }
 
     public function testCreate()

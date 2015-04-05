@@ -2,6 +2,7 @@
 
 namespace Hadonra\Bundle\AddressBundle\Service;
 
+use Bazinga\Bundle\GeocoderBundle\Geocoder\LoggableGeocoder;
 use Hadonra\Bundle\AddressBundle\Model\GeolocalisationServiceInterface;
 use Knp\DoctrineBehaviors\ORM\Geocodable\Type\Point;
 
@@ -23,6 +24,20 @@ class GeolocalisationService implements GeolocalisationServiceInterface
      * So 40000/360 = 111,11 km = 111 111,11 meter
      */
     const RATIO_DISTANCE_PER_DEGREE = 111111.11;
+
+    /**
+     * @var LoggableGeocoder
+     */
+    protected $geocoderProvider;
+
+    /**
+     * @param LoggableGeocoder $bazingaGeocoderService
+     * @param string $providerName
+     */
+    public function __construct(LoggableGeocoder $bazingaGeocoderService, $providerName)
+    {
+        $this->geocoderProvider = $bazingaGeocoderService->using($providerName);
+    }
 
     /**
      * {@inheritDoc}
@@ -96,5 +111,19 @@ class GeolocalisationService implements GeolocalisationServiceInterface
     public function getLatitudeSouth(Point $point, $distance)
     {
         return $point->getLatitude() - $distance / self::RATIO_DISTANCE_PER_DEGREE;
+    }
+
+    /**
+     * @param string $address
+     * @return Point
+     */
+    public function getPoint($address)
+    {
+        $result = $this->geocoderProvider->geocode($address);
+        if (!($result instanceof ResultInterface)) {
+            return null;
+        }
+
+        return Point::fromArray($result->getCoordinates());
     }
 }

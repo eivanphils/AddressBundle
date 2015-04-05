@@ -18,19 +18,18 @@ class AddressService implements AddressServiceInterface
     protected $addressRepository;
 
     /**
-     * @var LoggableGeocoder
+     * @var GeolocalisationService
      */
-    protected $geocoderProvider;
+    protected $geolocalisationService;
 
     /**
      * @param AddressRepository $addressRepository
-     * @param LoggableGeocoder $bazingaGeocoderService
-     * @param string $providerName
+     * @param GeolocalisationService $geolocalisationService
      */
-    public function __construct(AddressRepository $addressRepository, LoggableGeocoder $bazingaGeocoderService, $providerName)
+    public function __construct(AddressRepository $addressRepository, GeolocalisationService $geolocalisationService)
     {
         $this->addressRepository = $addressRepository;
-        $this->geocoderProvider = $bazingaGeocoderService->using($providerName);
+        $this->geolocalisationService = $geolocalisationService;
     }
 
     /**
@@ -55,8 +54,7 @@ class AddressService implements AddressServiceInterface
     public function definedPoint(AddressInterface $address)
     {
         $fullAddress = str_replace('bis', '', $address->getFullAddress());
-        $result = $this->geocoderProvider->geocode($fullAddress);
-        $point = Point::fromArray($result->getCoordinates());
+        $point = $this->geolocalisationService->getPoint($fullAddress);
         $address->setLocation($point);
 
         return $address;

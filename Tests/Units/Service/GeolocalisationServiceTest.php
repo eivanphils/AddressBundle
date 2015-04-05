@@ -2,6 +2,7 @@
 
 namespace Hadonra\Bundle\AddressBundle\Tests\Units\Service;
 
+use Bazinga\Bundle\GeocoderBundle\Geocoder\LoggableGeocoder;
 use Hadonra\Bundle\AddressBundle\Service\GeolocalisationService;
 use Knp\DoctrineBehaviors\ORM\Geocodable\Type\Point;
 
@@ -11,7 +12,9 @@ class GeolocalisationServiceTest extends \PHPUnit_Framework_TestCase
 
     public function setUp()
     {
-        $this->geolocalisationService = new GeolocalisationService();
+        $geocoder = new LoggableGeocoder();
+        $this->geolocalisationService = new GeolocalisationService($geocoder, 'google_maps');
+
     }
 
     public function testGetDistance()
