@@ -2,13 +2,11 @@
 
 namespace Hadonra\Bundle\AddressBundle\Service;
 
-use Bazinga\Bundle\GeocoderBundle\Geocoder\LoggableGeocoder;
 use Hadonra\Bundle\AddressBundle\Entity\Address;
 use Hadonra\Bundle\AddressBundle\Model\AddressInterface;
 use Hadonra\Bundle\AddressBundle\Repository\AddressRepository;
 use Hadonra\Bundle\AddressBundle\Model\CityInterface;
 use Hadonra\Bundle\AddressBundle\Model\AddressServiceInterface;
-use Knp\DoctrineBehaviors\ORM\Geocodable\Type\Point;
 
 class AddressService implements AddressServiceInterface
 {
