@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "b66ae4a550ed40f9bd9a1b4f15a853d8",
-    "content-hash": "669679b539e14dfea4b4e15bfc9c368a",
+    "hash": "69c57f4113002e00a5c5aa6917b33263",
+    "content-hash": "dd7a9b666bb39bae54e093300c151123",
     "packages": [
         {
             "name": "behat/transliterator",
@@ -621,7 +621,7 @@
         },
         {
             "name": "doctrine/doctrine-fixtures-bundle",
-            "version": "dev-master",
+            "version": "2.3.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/DoctrineFixturesBundle.git",
@@ -1103,16 +1103,16 @@
         },
         {
             "name": "knplabs/doctrine-behaviors",
-            "version": "dev-master",
+            "version": "1.3.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/KnpLabs/DoctrineBehaviors.git",
-                "reference": "dd4a575c200ebe59730bf3f212f6ccd1816ce6a8"
+                "reference": "32a022720b5c2ba1489b43af978af6b916233f2a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/KnpLabs/DoctrineBehaviors/zipball/dd4a575c200ebe59730bf3f212f6ccd1816ce6a8",
-                "reference": "dd4a575c200ebe59730bf3f212f6ccd1816ce6a8",
+                "url": "https://api.github.com/repos/KnpLabs/DoctrineBehaviors/zipball/32a022720b5c2ba1489b43af978af6b916233f2a",
+                "reference": "32a022720b5c2ba1489b43af978af6b916233f2a",
                 "shasum": ""
             },
             "require": {
@@ -1165,7 +1165,7 @@
                 "translatable",
                 "tree"
             ],
-            "time": "2016-02-09 08:43:00"
+            "time": "2015-12-18 13:42:46"
         },
         {
             "name": "paragonie/random_compat",
@@ -2989,8 +2989,6 @@
     "aliases": [],
     "minimum-stability": "stable",
     "stability-flags": {
-        "knplabs/doctrine-behaviors": 20,
-        "doctrine/doctrine-fixtures-bundle": 20,
         "willdurand/geocoder-bundle": 20
     },
     "prefer-stable": false,

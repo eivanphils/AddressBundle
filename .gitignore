@@ -47,13 +47,10 @@ behat.yml
 # OSX
 .AppleDouble
 .LSOverride
-Icon
 .Spotlight-V100
 .Trashes
 
 # Windows image file caches
-Thumbs.db
-ehthumbs.db
 Desktop.ini
 $RECYCLE.BIN/
 
@@ -65,9 +62,6 @@ dist/
 nbdist/
 nbactions.xml
 nb-configuration.xml
-
-# Phpstorm
-.idea/
 
 # SublimeText
 *.sublime-workspace
