@@ -18,18 +18,17 @@
     },
     "target-dir": "Hadonra/Bundle/AddressBundle",
     "require": {
-        "php": ">=5.4.0",
-        "symfony/symfony": "2.7.*",
-        "doctrine/orm": "~2.2,>=2.2.3,<2.5",
-        "doctrine/doctrine-bundle": "~1.2",
-        "sensio/framework-extra-bundle": "~3.0",
-        "knplabs/doctrine-behaviors": "1.0.3",
-        "doctrine/doctrine-fixtures-bundle": "2.2.*@dev",
-        "willdurand/geocoder-bundle": "@stable"
+        "php": ">=5.5.9",
+        "symfony/symfony": "3.0.*",
+        "doctrine/orm": "^2.5",
+        "doctrine/doctrine-bundle": "^1.6",
+        "sensio/framework-extra-bundle": "^3.0.2",
+        "knplabs/doctrine-behaviors": "dev-master",
+        "doctrine/doctrine-fixtures-bundle": "dev-master",
+        "willdurand/geocoder-bundle": "dev-master"
     },
     "require-dev": {
-        "behat/symfony2-extension": "*",
-        "phpunit/phpunit": "4.4.0"
+        "phpunit/phpunit": "5.2.9"
     },
     "config": {
         "bin-dir": "bin"
