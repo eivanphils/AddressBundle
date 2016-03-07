@@ -11,22 +11,15 @@ use Hadonra\Bundle\AddressBundle\Model\AddressServiceInterface;
 class AddressService implements AddressServiceInterface
 {
     /**
-     * @var AddressRepository
-     */
-    protected $addressRepository;
-
-    /**
      * @var GeolocalisationService
      */
     protected $geolocalisationService;
 
     /**
-     * @param AddressRepository $addressRepository
      * @param GeolocalisationService $geolocalisationService
      */
-    public function __construct(AddressRepository $addressRepository, GeolocalisationService $geolocalisationService)
+    public function __construct(GeolocalisationService $geolocalisationService)
     {
-        $this->addressRepository = $addressRepository;
         $this->geolocalisationService = $geolocalisationService;
     }
 
@@ -40,8 +33,6 @@ class AddressService implements AddressServiceInterface
             ->setCity($city)
             ->setStreet($street)
         ;
-
-        $this->addressRepository->attach($address);
 
         return $address;
     }
