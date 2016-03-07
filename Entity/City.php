@@ -11,7 +11,7 @@ use Hadonra\Bundle\AddressBundle\Model\CityInterface;
  * @author Raldo CHEA <raldo@chea.io>
  *
  * @ORM\Entity(repositoryClass="Hadonra\Bundle\AddressBundle\Repository\CityRepository")
- * @ORM\Table()
+ * @ORM\Table(name="City")
  */
 class City implements CityInterface
 {

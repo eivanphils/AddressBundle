@@ -12,7 +12,7 @@ use Hadonra\Bundle\AddressBundle\Model\RegionInterface;
  * @package Hadonra\Bundle\AddressBundle\Entity
  *
  * @ORM\Entity
- * @ORM\Table()
+ * @ORM\Table(name="Country")
  */
 class Country implements CountryInterface
 {

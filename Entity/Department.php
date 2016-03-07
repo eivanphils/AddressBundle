@@ -10,7 +10,7 @@ use Hadonra\Bundle\AddressBundle\Model\RegionInterface;
 
 /**
  * @ORM\Entity
- * @ORM\Table()
+ * @ORM\Table(name="Department")
  */
 class Department implements DepartmentInterface
 {

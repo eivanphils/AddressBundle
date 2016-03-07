@@ -9,7 +9,7 @@ use Hadonra\Bundle\AddressBundle\Model\RegionInterface;
 
 /**
  * @ORM\Entity
- * @ORM\Table()
+ * @ORM\Table(name="Region")
  */
 class Region implements RegionInterface
 {
