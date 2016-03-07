@@ -2,25 +2,24 @@
 
 namespace Hadonra\Bundle\AddressBundle\Tests\Units\Service;
 
-use Bazinga\Bundle\GeocoderBundle\Geocoder\LoggableGeocoder;
-use Geocoder\Provider\GoogleMapsProvider;
 use Hadonra\Bundle\AddressBundle\Entity\City;
 use Hadonra\Bundle\AddressBundle\Service\AddressService;
 use Hadonra\Bundle\AddressBundle\Model\AddressInterface;
-use Hadonra\Bundle\AddressBundle\Service\GeolocalisationService;
 
 class AddressServiceTest extends \PHPUnit_Framework_TestCase
 {
+    /**
+     * @var \Hadonra\Bundle\AddressBundle\Service\AddressService
+     */
     protected $addressService;
 
     public function setUp()
     {
-        $addressRepository = $this->getMockBuilder('Hadonra\Bundle\AddressBundle\Repository\AddressRepository')
+        $geolocalisationService = $this->getMockBuilder('Hadonra\Bundle\AddressBundle\Service\GeolocalisationService')
             ->disableOriginalConstructor()
             ->getMock();
-        $bazingaGeocoder = new LoggableGeocoder();
-        $geolocalisationService = new GeolocalisationService($bazingaGeocoder, 'google_maps');
-        $this->addressService = new AddressService($addressRepository, $geolocalisationService);
+
+        $this->addressService = new AddressService($geolocalisationService);
     }
 
     public function testCreate()

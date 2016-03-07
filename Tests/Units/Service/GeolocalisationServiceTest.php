@@ -12,7 +12,9 @@ class GeolocalisationServiceTest extends \PHPUnit_Framework_TestCase
 
     public function setUp()
     {
-        $geocoder = new LoggableGeocoder();
+        $geocoder = $this->getMockBuilder('Bazinga\Bundle\GeocoderBundle\Geocoder\LoggableGeocoder')
+            ->disableOriginalConstructor()
+            ->getMock();
         $this->geolocalisationService = new GeolocalisationService($geocoder, 'google_maps');
 
     }

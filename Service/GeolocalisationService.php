@@ -3,7 +3,6 @@
 namespace Hadonra\Bundle\AddressBundle\Service;
 
 use Bazinga\Bundle\GeocoderBundle\Geocoder\LoggableGeocoder;
-use Geocoder\Result\ResultInterface;
 use Hadonra\Bundle\AddressBundle\Model\GeolocalisationServiceInterface;
 use Knp\DoctrineBehaviors\ORM\Geocodable\Type\Point;
 
@@ -121,9 +120,6 @@ class GeolocalisationService implements GeolocalisationServiceInterface
     public function getPoint($address)
     {
         $result = $this->geocoderProvider->geocode($address);
-        if (!($result instanceof ResultInterface)) {
-            return null;
-        }
 
         return Point::fromArray($result->getCoordinates());
     }
