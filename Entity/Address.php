@@ -41,7 +41,7 @@ class Address implements AddressInterface
     protected $street3;
 
     /**
-     * @ORM\ManyToOne(targetEntity="City", inversedBy="addresses")
+     * @ORM\ManyToOne(targetEntity="City")
      * @ORM\JoinColumn(name="city_id", referencedColumnName="id")
      */
     protected $city;

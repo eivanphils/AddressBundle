@@ -27,7 +27,7 @@ class Department implements DepartmentInterface
     protected $name;
 
     /**
-     * @ORM\ManyToOne(targetEntity="Region", inversedBy="departments")
+     * @ORM\ManyToOne(targetEntity="Region", inversedBy="departements")
      * @ORM\JoinColumn(name="region_id", referencedColumnName="id")
      */
     protected $region;
