@@ -30,7 +30,7 @@ class City implements CityInterface
     protected $name;
 
     /**
-     * @ORM\Column(type="string", length=15)
+     * @ORM\Column(type="string", length=15, name="zip_code")
      */
     protected $zipCode;
 
