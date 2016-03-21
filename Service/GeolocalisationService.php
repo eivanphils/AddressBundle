@@ -34,9 +34,9 @@ class GeolocalisationService implements GeolocalisationServiceInterface
      * @param LoggableGeocoder $bazingaGeocoderService
      * @param string $providerName
      */
-    public function __construct(LoggableGeocoder $bazingaGeocoderService, $providerName)
+    public function __construct(LoggableGeocoder $bazingaGeocoderService)
     {
-        $this->geocoderProvider = $bazingaGeocoderService->using($providerName);
+        $this->geocoderProvider = $bazingaGeocoderService;
     }
 
     /**

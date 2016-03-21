@@ -8,10 +8,12 @@ services:
     hadonra_address.geolocalisation.service:
         class: %hadonra_address.geolocalisation.service.class%
         arguments:
-            - "%hadonra_address.loggable.geocoder.class%"
-            - "%hadonra_address.bazinga_geocoder.provider%"
+            - "@hadonra_address.loggable.geocoder"
 
     hadonra_address.address.service:
         class: %hadonra_address.address.service.class%
         arguments:
             - "@hadonra_address.geolocalisation.service"
+
+    hadonra_address.loggable.geocoder:
+        class: %hadonra_address.loggable.geocoder.class%
