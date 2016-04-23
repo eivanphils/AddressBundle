@@ -19,13 +19,13 @@
     "target-dir": "Hadonra/Bundle/AddressBundle",
     "require": {
         "php": ">=5.5.9",
-        "symfony/symfony": "3.0.*",
+        "symfony/symfony": "3.0.x-dev",
         "doctrine/orm": "^2.5",
         "doctrine/doctrine-bundle": "^1.6",
         "sensio/framework-extra-bundle": "^3.0.2",
         "knplabs/doctrine-behaviors": "1.3.0",
         "doctrine/doctrine-fixtures-bundle": "2.3.0",
-        "willdurand/geocoder-bundle": "4.1.0"
+        "willdurand/geocoder-bundle": "4.1.x-dev"
     },
     "require-dev": {
         "phpunit/phpunit": "5.2.9"
